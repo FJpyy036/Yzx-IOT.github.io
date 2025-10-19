@@ -1,0 +1,85 @@
+# ==========================================
+# 嵌入式工程师个人简历网站 - Git 忽略文件
+# ==========================================
+
+# 操作系统生成的文件
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# 编辑器和IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.settings/
+*.sublime-project
+*.sublime-workspace
+
+# 临时文件
+*.tmp
+*.temp
+*.log
+*.bak
+*.backup
+*-old
+*-backup
+
+# Node.js (如果以后使用构建工具)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+
+# 本地环境变量
+.env
+.env.local
+.env.*.local
+
+# 构建输出 (如果使用构建工具)
+dist/
+build/
+out/
+
+# 文档草稿
+draft/
+drafts/
+todo.txt
+notes.txt
+
+# 个人备份文件
+*.pdf.bak
+*.html.bak
+*.css.bak
+*.js.bak
+
+# Windows 缩略图
+Thumbs.db
+ehthumbs.db
+
+# Mac 相关
+.AppleDouble
+.LSOverride
+
+# Linux 相关
+*~
+.directory
+
+# 测试文件
+test/
+tests/
+__tests__/
+
+# 其他
+*.orig
+.cache/
+
