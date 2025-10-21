@@ -641,3 +641,25 @@ document.addEventListener('keydown', function(e) {
     }
 });
 
+// ==========================================
+// 确保 DOM 加载完成后初始化
+// ==========================================
+document.addEventListener('DOMContentLoaded', function() {
+    // 确认所有模态框元素存在
+    const projectModal = document.getElementById('projectModal');
+    const videoModal = document.getElementById('videoModal');
+    const imageModal = document.getElementById('imageModal');
+    
+    if (!projectModal) {
+        console.error('项目模态框元素未找到！');
+    }
+    if (!videoModal) {
+        console.error('视频模态框元素未找到！');
+    }
+    if (!imageModal) {
+        console.error('图片模态框元素未找到！');
+    }
+    
+    console.log('✅ 所有模态框初始化完成');
+});
+
