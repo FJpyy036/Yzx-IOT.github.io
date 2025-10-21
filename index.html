@@ -15,6 +15,7 @@
         <div class="container">
             <ul class="nav-menu">
                 <li><a href="#home">首页</a></li>
+                <li><a href="#about">关于我</a></li>
                 <li><a href="#experience">工作经历</a></li>
                 <li><a href="#education">教育背景</a></li>
                 <li><a href="#contact">联系方式</a></li>
@@ -169,10 +170,10 @@
                         <!-- 项目卡片 -->
                         <div class="project-card-wrapper">
                             <div class="project-card-inner">
-                                <div class="project-header-bar" onclick="toggleProject(this)">
+                                <div class="project-header-bar" onclick="openProjectModal(this)">
                                     <div class="project-title-row">
                                         <h5 class="project-name">• 基于ESP32P4的码表</h5>
-                                        <i class="fas fa-chevron-down toggle-icon"></i>
+                                        <i class="fas fa-expand-alt toggle-icon"></i>
                                     </div>
                                     <div class="project-tags-preview">
                                         <span class="tag-mini">ESP32-P4</span>
@@ -283,10 +284,10 @@
                         <!-- 项目卡片 -->
                         <div class="project-card-wrapper">
                             <div class="project-card-inner">
-                                <div class="project-header-bar" onclick="toggleProject(this)">
+                                <div class="project-header-bar" onclick="openProjectModal(this)">
                                     <div class="project-title-row">
                                         <h5 class="project-name">• 基于ESP32的情绪呼吸灯</h5>
-                                        <i class="fas fa-chevron-down toggle-icon"></i>
+                                        <i class="fas fa-expand-alt toggle-icon"></i>
                         </div>
                                     <div class="project-tags-preview">
                                         <span class="tag-mini">ESP32</span>
@@ -441,10 +442,10 @@
                                 </div>
                                 
                                 <div class="project-card-inner">
-                                    <div class="project-header-bar" onclick="toggleProject(this)">
+                                    <div class="project-header-bar" onclick="openProjectModal(this)">
                                         <div class="project-title-row">
                                             <h5 class="project-name">• 基于STM32的智能农业监测</h5>
-                                            <i class="fas fa-chevron-down toggle-icon"></i>
+                                            <i class="fas fa-expand-alt toggle-icon"></i>
                                         </div>
                                         <div class="project-tags-preview">
                                             <span class="tag-mini">STM32</span>
@@ -521,10 +522,10 @@
                                 </div>
                                 
                                 <div class="project-card-inner">
-                                    <div class="project-header-bar" onclick="toggleProject(this)">
+                                    <div class="project-header-bar" onclick="openProjectModal(this)">
                                         <div class="project-title-row">
                                             <h5 class="project-name">• 基于STM32人工淡水湖养殖系统</h5>
-                                            <i class="fas fa-chevron-down toggle-icon"></i>
+                                            <i class="fas fa-expand-alt toggle-icon"></i>
                                         </div>
                                         <div class="project-tags-preview">
                                             <span class="tag-mini">STM32F103C8T6</span>
@@ -604,10 +605,10 @@
                                 </div>
                                 
                                 <div class="project-card-inner">
-                                    <div class="project-header-bar" onclick="toggleProject(this)">
+                                    <div class="project-header-bar" onclick="openProjectModal(this)">
                                         <div class="project-title-row">
                                             <h5 class="project-name">• 基于STM32的门禁系统</h5>
-                                            <i class="fas fa-chevron-down toggle-icon"></i>
+                                            <i class="fas fa-expand-alt toggle-icon"></i>
                                         </div>
                                         <div class="project-tags-preview">
                                             <span class="tag-mini">STM32</span>
@@ -684,10 +685,10 @@
                                 </div>
                                 
                                 <div class="project-card-inner">
-                                    <div class="project-header-bar" onclick="toggleProject(this)">
+                                    <div class="project-header-bar" onclick="openProjectModal(this)">
                                         <div class="project-title-row">
                                             <h5 class="project-name">• 智能家居语音控制系统</h5>
-                                            <i class="fas fa-chevron-down toggle-icon"></i>
+                                            <i class="fas fa-expand-alt toggle-icon"></i>
                                         </div>
                                         <div class="project-tags-preview">
                                             <span class="tag-mini">STM32F103C8T6</span>
@@ -762,10 +763,10 @@
                                 </div>
                                 
                                 <div class="project-card-inner">
-                                    <div class="project-header-bar" onclick="toggleProject(this)">
+                                    <div class="project-header-bar" onclick="openProjectModal(this)">
                                         <div class="project-title-row">
                                             <h5 class="project-name">• 基于STM32单片机的疲劳驾驶酒精检测安全驾驶系统</h5>
-                                            <i class="fas fa-chevron-down toggle-icon"></i>
+                                            <i class="fas fa-expand-alt toggle-icon"></i>
                                         </div>
                                         <div class="project-tags-preview">
                                             <span class="tag-mini">STM32F103C8T6</span>
@@ -869,10 +870,10 @@
                                 </div>
                                 
                                 <div class="project-card-inner">
-                                    <div class="project-header-bar" onclick="toggleProject(this)">
+                                    <div class="project-header-bar" onclick="openProjectModal(this)">
                                         <div class="project-title-row">
                                             <h5 class="project-name">• 基于STM32的二轮自动平衡小车</h5>
-                                            <i class="fas fa-chevron-down toggle-icon"></i>
+                                            <i class="fas fa-expand-alt toggle-icon"></i>
                                         </div>
                                         <div class="project-tags-preview">
                                             <span class="tag-mini">STM32F103C8T6</span>
@@ -951,10 +952,10 @@
                                 </div>
                                 
                                 <div class="project-card-inner">
-                                    <div class="project-header-bar" onclick="toggleProject(this)">
+                                    <div class="project-header-bar" onclick="openProjectModal(this)">
                                         <div class="project-title-row">
                                             <h5 class="project-name">• 基于STM32的车内儿童误留监测系统</h5>
-                                            <i class="fas fa-chevron-down toggle-icon"></i>
+                                            <i class="fas fa-expand-alt toggle-icon"></i>
                                         </div>
                                         <div class="project-tags-preview">
                                             <span class="tag-mini">STM32</span>
@@ -1113,6 +1114,16 @@
                 <button class="image-nav-btn" id="nextImageBtn" onclick="navigateImage(1)">
                     <i class="fas fa-chevron-right"></i>
                 </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 项目详情模态框 -->
+    <div id="projectModal" class="project-modal">
+        <div class="project-modal-content">
+            <span class="project-modal-close" onclick="closeProjectModal()">&times;</span>
+            <div class="project-modal-body" id="projectModalBody">
+                <!-- 项目详情内容将通过 JavaScript 动态插入 -->
             </div>
         </div>
     </div>

@@ -345,24 +345,69 @@ darkModeToggle.addEventListener('click', () => {
 */
 
 // ==========================================
-// 项目卡片展开/折叠功能
+// 项目详情模态框功能
 // ==========================================
-function toggleProject(headerElement) {
+function openProjectModal(headerElement) {
     const projectCard = headerElement.parentElement;
     const projectDetails = projectCard.querySelector('.project-details');
+    const projectName = projectCard.querySelector('.project-name').textContent;
     
-    if (projectDetails.style.display === 'none' || projectDetails.style.display === '') {
-        projectDetails.style.display = 'block';
-        headerElement.classList.add('expanded');
-    } else {
-        projectDetails.style.display = 'none';
-        headerElement.classList.remove('expanded');
-    }
+    // 获取模态框元素
+    const modal = document.getElementById('projectModal');
+    const modalBody = document.getElementById('projectModalBody');
+    
+    // 克隆项目详情内容
+    const detailsClone = projectDetails.cloneNode(true);
+    detailsClone.style.display = 'block';
+    
+    // 创建模态框标题
+    const modalTitle = document.createElement('h2');
+    modalTitle.className = 'project-modal-title';
+    modalTitle.textContent = projectName;
+    
+    // 清空并填充模态框内容
+    modalBody.innerHTML = '';
+    modalBody.appendChild(modalTitle);
+    modalBody.appendChild(detailsClone);
+    
+    // 显示模态框
+    modal.classList.add('show');
+    
+    // 禁止页面滚动
+    document.body.style.overflow = 'hidden';
+}
+
+// 关闭项目详情模态框
+function closeProjectModal() {
+    const modal = document.getElementById('projectModal');
+    
+    // 隐藏模态框
+    modal.classList.remove('show');
+    modal.style.display = '';
+    
+    // 重置隐藏标志
+    projectModalHidden = false;
+    
+    // 恢复页面滚动
+    document.body.style.overflow = '';
+}
+
+// 点击模态框背景关闭
+const projectModal = document.getElementById('projectModal');
+if (projectModal) {
+    projectModal.addEventListener('click', function(e) {
+        if (e.target === projectModal) {
+            closeProjectModal();
+        }
+    });
 }
 
 // ==========================================
 // 视频播放模态框功能
 // ==========================================
+// 记录项目弹窗是否被暂时隐藏（用于恢复）
+let projectModalHidden = false;
+
 // 视频路径配置 - 请将视频文件放在 videos 文件夹中
 const videoSources = {
     'video-breath-light': './videos/breath-light.mp4',          // ESP32情绪呼吸灯项目视频
@@ -378,6 +423,15 @@ const videoSources = {
 
 // 打开视频模态框
 function openVideoModal(videoId) {
+    // 检查项目模态框是否打开，如果是则暂时隐藏（不关闭）
+    const projectModal = document.getElementById('projectModal');
+    if (projectModal && projectModal.classList.contains('show')) {
+        projectModal.style.display = 'none';
+        projectModalHidden = true;
+    } else {
+        projectModalHidden = false;
+    }
+    
     const modal = document.getElementById('videoModal');
     const video = document.getElementById('modalVideo');
     const videoSource = document.getElementById('videoSource');
@@ -414,8 +468,17 @@ function closeVideoModal() {
     // 隐藏模态框
     modal.classList.remove('show');
     
-    // 恢复页面滚动
-    document.body.style.overflow = '';
+    // 如果项目弹窗之前被隐藏了，恢复显示
+    if (projectModalHidden) {
+        const projectModal = document.getElementById('projectModal');
+        if (projectModal) {
+            projectModal.style.display = 'flex';
+        }
+        projectModalHidden = false;
+    } else {
+        // 恢复页面滚动（只有在没有恢复项目弹窗时才恢复滚动）
+        document.body.style.overflow = '';
+    }
 }
 
 // 点击模态框背景关闭
@@ -438,6 +501,10 @@ document.addEventListener('keydown', function(e) {
         const imageModal = document.getElementById('imageModal');
         if (imageModal && imageModal.classList.contains('show')) {
             closeImageModal();
+        }
+        const projectModal = document.getElementById('projectModal');
+        if (projectModal && projectModal.classList.contains('show')) {
+            closeProjectModal();
         }
     }
 });
@@ -463,6 +530,15 @@ let currentImageIndex = 0;
 
 // 打开图片模态框
 function openImageModal(imageSrc, galleryId) {
+    // 检查项目模态框是否打开，如果是则暂时隐藏（不关闭）
+    const projectModal = document.getElementById('projectModal');
+    if (projectModal && projectModal.classList.contains('show')) {
+        projectModal.style.display = 'none';
+        projectModalHidden = true;
+    } else {
+        projectModalHidden = false;
+    }
+    
     const modal = document.getElementById('imageModal');
     const modalImage = document.getElementById('modalImage');
     
@@ -499,8 +575,17 @@ function closeImageModal() {
     // 清空图片
     modalImage.src = '';
     
-    // 恢复页面滚动
-    document.body.style.overflow = '';
+    // 如果项目弹窗之前被隐藏了，恢复显示
+    if (projectModalHidden) {
+        const projectModal = document.getElementById('projectModal');
+        if (projectModal) {
+            projectModal.style.display = 'flex';
+        }
+        projectModalHidden = false;
+    } else {
+        // 恢复页面滚动（只有在没有恢复项目弹窗时才恢复滚动）
+        document.body.style.overflow = '';
+    }
 }
 
 // 导航到上一张或下一张图片
