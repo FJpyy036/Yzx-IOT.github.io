@@ -370,6 +370,24 @@ function openProjectModal(headerElement) {
     modalBody.appendChild(modalTitle);
     modalBody.appendChild(detailsClone);
     
+    // 为克隆的视频按钮重新绑定事件
+    const clonedVideoButtons = detailsClone.querySelectorAll('.btn-demo[data-video-id]');
+    clonedVideoButtons.forEach(function(button) {
+        button.addEventListener('click', function() {
+            const videoId = this.getAttribute('data-video-id');
+            openVideoModal(videoId);
+        });
+    });
+    
+    // 为克隆的图片重新绑定事件
+    const clonedImages = detailsClone.querySelectorAll('.project-thumbnail[data-gallery-id]');
+    clonedImages.forEach(function(img) {
+        img.addEventListener('click', function() {
+            const galleryId = this.getAttribute('data-gallery-id');
+            openImageModal(this.src, galleryId);
+        });
+    });
+    
     // 显示模态框
     modal.classList.add('show');
     
@@ -660,6 +678,69 @@ document.addEventListener('DOMContentLoaded', function() {
         console.error('图片模态框元素未找到！');
     }
     
-    console.log('✅ 所有模态框初始化完成');
+    // 为所有项目卡片添加点击事件监听器
+    const projectHeaders = document.querySelectorAll('.project-header-bar');
+    console.log(`找到 ${projectHeaders.length} 个项目卡片`);
+    
+    projectHeaders.forEach(function(header) {
+        header.addEventListener('click', function() {
+            openProjectModal(this);
+        });
+    });
+    
+    // 为所有视频按钮添加点击事件监听器
+    const videoButtons = document.querySelectorAll('.btn-demo[data-video-id]');
+    console.log(`找到 ${videoButtons.length} 个视频按钮`);
+    
+    videoButtons.forEach(function(button) {
+        button.addEventListener('click', function() {
+            const videoId = this.getAttribute('data-video-id');
+            openVideoModal(videoId);
+        });
+    });
+    
+    // 为所有项目图片添加点击事件监听器
+    const projectImages = document.querySelectorAll('.project-thumbnail[data-gallery-id]');
+    console.log(`找到 ${projectImages.length} 个项目图片`);
+    
+    projectImages.forEach(function(img) {
+        img.addEventListener('click', function() {
+            const galleryId = this.getAttribute('data-gallery-id');
+            openImageModal(this.src, galleryId);
+        });
+    });
+    
+    // 为关闭按钮添加事件监听器
+    const videoModalClose = document.getElementById('videoModalClose');
+    if (videoModalClose) {
+        videoModalClose.addEventListener('click', closeVideoModal);
+    }
+    
+    const imageModalClose = document.getElementById('imageModalClose');
+    if (imageModalClose) {
+        imageModalClose.addEventListener('click', closeImageModal);
+    }
+    
+    const projectModalClose = document.getElementById('projectModalClose');
+    if (projectModalClose) {
+        projectModalClose.addEventListener('click', closeProjectModal);
+    }
+    
+    // 为图片导航按钮添加事件监听器
+    const prevImageBtn = document.getElementById('prevImageBtn');
+    if (prevImageBtn) {
+        prevImageBtn.addEventListener('click', function() {
+            navigateImage(-1);
+        });
+    }
+    
+    const nextImageBtn = document.getElementById('nextImageBtn');
+    if (nextImageBtn) {
+        nextImageBtn.addEventListener('click', function() {
+            navigateImage(1);
+        });
+    }
+    
+    console.log('✅ 所有模态框和事件监听器初始化完成');
 });
 

@@ -170,7 +170,7 @@
                         <!-- 项目卡片 -->
                         <div class="project-card-wrapper">
                             <div class="project-card-inner">
-                                <div class="project-header-bar" onclick="openProjectModal(this)">
+                                <div class="project-header-bar">
                                     <div class="project-title-row">
                                         <h5 class="project-name">• 基于ESP32P4的码表</h5>
                                         <i class="fas fa-expand-alt toggle-icon"></i>
@@ -239,13 +239,13 @@
                                 <!-- 项目演示 -->
                                 <div class="project-demo-section">
                                     <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-                                        <button class="btn-demo" onclick="openVideoModal('video-esp32-bike')">
+                                        <button class="btn-demo" data-video-id="video-esp32-bike">
                                             <i class="fas fa-play-circle"></i> 码表功能演示
                                         </button>
-                                        <button class="btn-demo" onclick="openVideoModal('video-dji-camera')">
+                                        <button class="btn-demo" data-video-id="video-dji-camera">
                                             <i class="fas fa-video"></i> DJI相机直播演示
                                         </button>
-                                        <button class="btn-demo" onclick="openVideoModal('video-dji-remote')">
+                                        <button class="btn-demo" data-video-id="video-dji-remote">
                                             <i class="fas fa-gamepad"></i> DJI相机遥控演示
                                         </button>
                                     </div>
@@ -284,7 +284,7 @@
                         <!-- 项目卡片 -->
                         <div class="project-card-wrapper">
                             <div class="project-card-inner">
-                                <div class="project-header-bar" onclick="openProjectModal(this)">
+                                <div class="project-header-bar">
                                     <div class="project-title-row">
                                         <h5 class="project-name">• 基于ESP32的情绪呼吸灯</h5>
                                         <i class="fas fa-expand-alt toggle-icon"></i>
@@ -327,7 +327,7 @@
                                 
                                 <!-- 项目演示 -->
                                 <div class="project-demo-section">
-                                    <button class="btn-demo" onclick="openVideoModal('video-breath-light')">
+                                    <button class="btn-demo" data-video-id="video-breath-light">
                                         <i class="fas fa-play-circle"></i> 观看项目演示视频
                                     </button>
                     </div>
@@ -442,7 +442,7 @@
                                 </div>
                                 
                                 <div class="project-card-inner">
-                                    <div class="project-header-bar" onclick="openProjectModal(this)">
+                                    <div class="project-header-bar">
                                         <div class="project-title-row">
                                             <h5 class="project-name">• 基于STM32的智能农业监测</h5>
                                             <i class="fas fa-expand-alt toggle-icon"></i>
@@ -491,7 +491,7 @@
                                         
                                         <!-- 项目演示 -->
                                         <div class="project-demo-section">
-                                            <button class="btn-demo" onclick="openVideoModal('video-agriculture')">
+                                            <button class="btn-demo" data-video-id="video-agriculture">
                                                 <i class="fas fa-play-circle"></i> 观看项目演示视频
                                             </button>
                                         </div>
@@ -522,7 +522,7 @@
                                 </div>
                                 
                                 <div class="project-card-inner">
-                                    <div class="project-header-bar" onclick="openProjectModal(this)">
+                                    <div class="project-header-bar">
                                         <div class="project-title-row">
                                             <h5 class="project-name">• 基于STM32人工淡水湖养殖系统</h5>
                                             <i class="fas fa-expand-alt toggle-icon"></i>
@@ -576,7 +576,7 @@
                                         
                                         <!-- 项目演示 -->
                                         <div class="project-demo-section">
-                                            <button class="btn-demo" onclick="openVideoModal('video-aquaculture')">
+                                            <button class="btn-demo" data-video-id="video-aquaculture">
                                                 <i class="fas fa-play-circle"></i> 观看项目演示视频
                                             </button>
                                         </div>
@@ -605,7 +605,7 @@
                                 </div>
                                 
                                 <div class="project-card-inner">
-                                    <div class="project-header-bar" onclick="openProjectModal(this)">
+                                    <div class="project-header-bar">
                                         <div class="project-title-row">
                                             <h5 class="project-name">• 基于STM32的门禁系统</h5>
                                             <i class="fas fa-expand-alt toggle-icon"></i>
@@ -685,7 +685,7 @@
                                 </div>
                                 
                                 <div class="project-card-inner">
-                                    <div class="project-header-bar" onclick="openProjectModal(this)">
+                                    <div class="project-header-bar">
                                         <div class="project-title-row">
                                             <h5 class="project-name">• 智能家居语音控制系统</h5>
                                             <i class="fas fa-expand-alt toggle-icon"></i>
@@ -763,7 +763,7 @@
                                 </div>
                                 
                                 <div class="project-card-inner">
-                                    <div class="project-header-bar" onclick="openProjectModal(this)">
+                                    <div class="project-header-bar">
                                         <div class="project-title-row">
                                             <h5 class="project-name">• 基于STM32单片机的疲劳驾驶酒精检测安全驾驶系统</h5>
                                             <i class="fas fa-expand-alt toggle-icon"></i>
@@ -835,13 +835,13 @@
                                                 <i class="fas fa-images"></i> 项目实拍图片
                                             </h6>
                                             <div class="project-images-grid">
-                                                <img src="./photo/fatigue_driving_detection_system/1.jpg" alt="疲劳驾驶检测系统实拍图1" class="project-thumbnail" onclick="openImageModal(this.src, 'fatigue-driving')">
-                                                <img src="./photo/fatigue_driving_detection_system/2.jpg" alt="疲劳驾驶检测系统实拍图2" class="project-thumbnail" onclick="openImageModal(this.src, 'fatigue-driving')">
-                                                <img src="./photo/fatigue_driving_detection_system/3.jpg" alt="疲劳驾驶检测系统实拍图3" class="project-thumbnail" onclick="openImageModal(this.src, 'fatigue-driving')">
-                                                <img src="./photo/fatigue_driving_detection_system/4.jpg" alt="疲劳驾驶检测系统实拍图4" class="project-thumbnail" onclick="openImageModal(this.src, 'fatigue-driving')">
-                                                <img src="./photo/fatigue_driving_detection_system/5.jpg" alt="疲劳驾驶检测系统实拍图5" class="project-thumbnail" onclick="openImageModal(this.src, 'fatigue-driving')">
-                                                <img src="./photo/fatigue_driving_detection_system/6.jpg" alt="疲劳驾驶检测系统实拍图6" class="project-thumbnail" onclick="openImageModal(this.src, 'fatigue-driving')">
-                                                <img src="./photo/fatigue_driving_detection_system/7.jpg" alt="疲劳驾驶检测系统实拍图7" class="project-thumbnail" onclick="openImageModal(this.src, 'fatigue-driving')">
+                                                <img src="./photo/fatigue_driving_detection_system/1.jpg" alt="疲劳驾驶检测系统实拍图1" class="project-thumbnail" data-gallery-id="fatigue-driving">
+                                                <img src="./photo/fatigue_driving_detection_system/2.jpg" alt="疲劳驾驶检测系统实拍图2" class="project-thumbnail" data-gallery-id="fatigue-driving">
+                                                <img src="./photo/fatigue_driving_detection_system/3.jpg" alt="疲劳驾驶检测系统实拍图3" class="project-thumbnail" data-gallery-id="fatigue-driving">
+                                                <img src="./photo/fatigue_driving_detection_system/4.jpg" alt="疲劳驾驶检测系统实拍图4" class="project-thumbnail" data-gallery-id="fatigue-driving">
+                                                <img src="./photo/fatigue_driving_detection_system/5.jpg" alt="疲劳驾驶检测系统实拍图5" class="project-thumbnail" data-gallery-id="fatigue-driving">
+                                                <img src="./photo/fatigue_driving_detection_system/6.jpg" alt="疲劳驾驶检测系统实拍图6" class="project-thumbnail" data-gallery-id="fatigue-driving">
+                                                <img src="./photo/fatigue_driving_detection_system/7.jpg" alt="疲劳驾驶检测系统实拍图7" class="project-thumbnail" data-gallery-id="fatigue-driving">
                                             </div>
                                         </div>
                                         
@@ -870,7 +870,7 @@
                                 </div>
                                 
                                 <div class="project-card-inner">
-                                    <div class="project-header-bar" onclick="openProjectModal(this)">
+                                    <div class="project-header-bar">
                                         <div class="project-title-row">
                                             <h5 class="project-name">• 基于STM32的二轮自动平衡小车</h5>
                                             <i class="fas fa-expand-alt toggle-icon"></i>
@@ -923,7 +923,7 @@
                                         
                                         <!-- 项目演示 -->
                                         <div class="project-demo-section">
-                                            <button class="btn-demo" onclick="openVideoModal('video-balance-car')">
+                                            <button class="btn-demo" data-video-id="video-balance-car">
                                                 <i class="fas fa-play-circle"></i> 观看项目演示视频
                                             </button>
                                         </div>
@@ -952,7 +952,7 @@
                                 </div>
                                 
                                 <div class="project-card-inner">
-                                    <div class="project-header-bar" onclick="openProjectModal(this)">
+                                    <div class="project-header-bar">
                                         <div class="project-title-row">
                                             <h5 class="project-name">• 基于STM32的车内儿童误留监测系统</h5>
                                             <i class="fas fa-expand-alt toggle-icon"></i>
@@ -1091,7 +1091,7 @@
     <!-- 视频播放模态框 -->
     <div id="videoModal" class="video-modal">
         <div class="video-modal-content">
-            <span class="video-modal-close" onclick="closeVideoModal()">&times;</span>
+            <span class="video-modal-close" id="videoModalClose">&times;</span>
             <div class="video-container">
                 <video id="modalVideo" controls>
                     <source id="videoSource" src="" type="video/mp4">
@@ -1103,15 +1103,15 @@
 
     <!-- 图片查看模态框 -->
     <div id="imageModal" class="image-modal">
-        <span class="image-modal-close" onclick="closeImageModal()">&times;</span>
+        <span class="image-modal-close" id="imageModalClose">&times;</span>
         <div class="image-modal-content">
             <img id="modalImage" src="" alt="项目图片">
             <div class="image-nav">
-                <button class="image-nav-btn" id="prevImageBtn" onclick="navigateImage(-1)">
+                <button class="image-nav-btn" id="prevImageBtn">
                     <i class="fas fa-chevron-left"></i>
                 </button>
                 <span id="imageCounter" class="image-counter"></span>
-                <button class="image-nav-btn" id="nextImageBtn" onclick="navigateImage(1)">
+                <button class="image-nav-btn" id="nextImageBtn">
                     <i class="fas fa-chevron-right"></i>
                 </button>
             </div>
@@ -1121,7 +1121,7 @@
     <!-- 项目详情模态框 -->
     <div id="projectModal" class="project-modal">
         <div class="project-modal-content">
-            <span class="project-modal-close" onclick="closeProjectModal()">&times;</span>
+            <span class="project-modal-close" id="projectModalClose">&times;</span>
             <div class="project-modal-body" id="projectModalBody">
                 <!-- 项目详情内容将通过 JavaScript 动态插入 -->
             </div>
